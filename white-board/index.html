@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Workspace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <h1 class="logo">📒 Notebooks</h1>
+
+        <button id="addnotebook">
+            <span>+</span> New Notebook
+        </button>
+
+        <hr>
+
+        <div id="subbook"></div>
+    </aside>
+
+    <main class="main">
+
+        <section id="empty-state" class="empty-state">
+            <div class="empty-icon">📓</div>
+
+            <h2>No Notebook Selected</h2>
+
+            <p>Create a notebook or select one from the sidebar to start writing notes and managing tasks.</p>
+        </section>
+
+        <section id="workspace" class="workspace">
+
+            <header class="workspace-header">
+
+                <input
+                    type="text"
+                    id="notebook-title-input"
+                    class="notebook-title-input"
+                    placeholder="Notebook Name"
+                >
+
+                <nav class="tabs-nav">
+                    <button class="tab-btn active" data-tab="notes">📝 Notes</button>
+                    <button class="tab-btn" data-tab="canvas">🎨 Canvas</button>
+                    <button class="tab-btn" data-tab="tasks">✅ Tasks</button>
+                </nav>
+
+            </header>
+
+            <div class="workspace-content">
+
+                <section id="tab-notes" class="tab-panel active">
+                    <textarea id="notes-textarea" placeholder="Start writing your notes..."></textarea>
+                </section>
+
+                <section id="tab-canvas" class="tab-panel">
+                    <div class="coming-soon">
+                        <div class="icon">🎨</div>
+                        <h3>Canvas Workspace</h3>
+                        <span class="badge">Coming Soon</span>
+                        <p>Sketch ideas, create mind maps and diagrams here.</p>
+                    </div>
+                </section>
+
+                <section id="tab-tasks" class="tab-panel">
+
+                    <div class="tasks">
+
+                        <div class="task-input">
+                            <input
+                                type="text"
+                                id="new-task-input"
+                                placeholder="Add a task..."
+                            >
+                            <button id="add-task-btn">Add</button>
+                        </div>
+
+                        <div class="task-section">
+                            <h4>Pending <span id="incomplete-count">0</span></h4>
+                            <ul id="incomplete-tasks-list"></ul>
+                        </div>
+
+                        <div class="task-section">
+                            <h4>Completed <span id="completed-count">0</span></h4>
+                            <ul id="completed-tasks-list"></ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
